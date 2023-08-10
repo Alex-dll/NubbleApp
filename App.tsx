@@ -5,7 +5,11 @@ import {Text} from './src/components/Text';
 function App(): JSX.Element {
   return (
     <SafeAreaView>
-      <Text style={{color: 'red'}}>Olá mundo</Text>
+      <Text italic>Olá mundo</Text>
+      <Text bold>Olá mundo</Text>
+      <Text preset="paragraphSmall" italic>
+        Olá mundo
+      </Text>
     </SafeAreaView>
   );
 }
