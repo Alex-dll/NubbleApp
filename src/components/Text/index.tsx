@@ -14,8 +14,6 @@ export function Text({
 }: ITextProps) {
   const fontFamily = getFontFamily(preset, bold, italic, semiBold);
 
-  console.log(fontFamily);
-
   return (
     <RNText style={[$fontSizes[preset], {fontFamily}, style]} {...rest}>
       {children}

@@ -7,7 +7,6 @@ export const getFontFamily = (
   italic?: boolean,
   semiBold?: boolean,
 ) => {
-  console.log(italic);
   if (
     preset === 'headingLarge' ||
     preset === 'headingMedium' ||
