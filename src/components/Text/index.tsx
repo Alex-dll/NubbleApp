@@ -1,7 +1,6 @@
 import React from 'react';
-import {Text as RNText} from 'react-native';
 import type {ITextProps} from './types';
-import {$fontSizes, getFontFamily} from './consts';
+import {$fontSizes, SRText, getFontFamily} from './consts';
 
 export function Text({
   preset = 'headingMedium',
@@ -15,8 +14,11 @@ export function Text({
   const fontFamily = getFontFamily(preset, bold, italic, semiBold);
 
   return (
-    <RNText style={[$fontSizes[preset], {fontFamily}, style]} {...rest}>
+    <SRText
+      color="backgroundContrast"
+      style={[$fontSizes[preset], {fontFamily}, style]}
+      {...rest}>
       {children}
-    </RNText>
+    </SRText>
   );
 }

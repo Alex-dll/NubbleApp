@@ -1,6 +1,10 @@
-import type {TextProps} from 'react-native';
+import {ComponentProps} from 'react';
+import type {TextProps as RNTextProps} from 'react-native';
+import {SRText} from './consts';
 
-export interface ITextProps extends TextProps {
+type SRTextProps = ComponentProps<typeof SRText>;
+
+export interface ITextProps extends RNTextProps, SRTextProps {
   preset?: TextVariants;
   bold?: boolean;
   italic?: boolean;

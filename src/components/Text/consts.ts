@@ -1,5 +1,9 @@
 import type {TextStyle} from 'react-native';
 import type {TextVariants} from './types';
+import {createText} from '@shopify/restyle';
+import type {Theme} from '../../theme/types';
+
+export const SRText = createText<Theme>();
 
 export const getFontFamily = (
   preset: TextVariants,
