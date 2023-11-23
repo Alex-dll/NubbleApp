@@ -1,11 +1,12 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
 import {Text} from './src/components/Text';
-import {Button} from './src/components/Button';
 import {ThemeProvider} from '@shopify/restyle';
 
-import {Box} from './src/components/Box';
 import {theme} from './src/theme';
+
+import {Box} from './src/components/Box';
+import {Icon} from './src/components/Icon';
 
 function App(): JSX.Element {
   return (
@@ -16,24 +17,21 @@ function App(): JSX.Element {
             Olá mundo
           </Text>
 
-          <Box my="s12">
-            <Button title="Entrar" />
+          <Box flexDirection="row" gap="s10">
+            <Icon name="chevronRight" size={50} />
+            <Icon name="heartFill" color="buttonPrimary" />
+            <Icon name="profile" size={50} />
+            <Icon name="profileFill" size={50} />
+            <Icon name="heart" size={50} />
+            <Icon name="bellOn" color="carrotSecondary" size={50} />
           </Box>
-
-          <Box my="s12">
-            <Button loading title="Entrar" />
-          </Box>
-
-          <Box my="s12">
-            <Button disabled title="Entrar" />
-          </Box>
-
-          <Box my="s12">
-            <Button preset="outline" title="Entrar" />
-          </Box>
-
-          <Box my="s12">
-            <Button disabled preset="outline" title="Entrar" />
+          <Box flexDirection="row" gap="s10">
+            <Icon name="newPost" size={50} />
+            <Icon name="camera" size={50} />
+            <Icon name="chat" size={50} />
+            <Icon name="chatOn" color="error" size={50} />
+            <Icon name="flashOff" size={50} />
+            <Icon name="flashOn" size={50} />
           </Box>
         </View>
       </SafeAreaView>

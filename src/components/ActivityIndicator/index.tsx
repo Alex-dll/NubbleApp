@@ -1,11 +1,10 @@
 import React from 'react';
 import {ActivityIndicator as RNActivityIndicator} from 'react-native';
 import type {ActivityIndicatorProps} from './types';
-import {useTheme} from '@shopify/restyle';
-import {Theme} from '../../theme/types';
+import {useAppTheme} from '../../hooks/useAppTheme';
 
 export function ActivityIndicator({color}: ActivityIndicatorProps) {
-  const {colors} = useTheme<Theme>();
+  const {colors} = useAppTheme();
 
   return <RNActivityIndicator color={colors[color]} />;
 }
