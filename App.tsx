@@ -4,7 +4,6 @@ import {Text} from './src/components/Text';
 import {ThemeProvider} from '@shopify/restyle';
 
 import {theme} from './src/theme';
-import {Box} from './src/components/Box';
 import {Button} from './src/components/Button';
 import {TextInput} from './src/components/TextInput';
 import {Icon} from './src/components/Icon';
