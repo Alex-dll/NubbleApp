@@ -22,7 +22,6 @@ function App(): JSX.Element {
           </Text>
 
           <TextInput
-            errorMessage="ola"
             label="E-mail"
             placeholder="Digite seu e-mail"
             boxProps={{mb: 's20'}}
