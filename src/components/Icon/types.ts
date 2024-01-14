@@ -5,6 +5,7 @@ export interface IconProps {
   name: IconName;
   size?: number;
   color?: ThemeColors;
+  onPress?: () => void;
 }
 
 export interface IconBase {

@@ -2,8 +2,8 @@ import React from 'react';
 import {Screen} from '../../../components/Screen';
 import {Text} from '../../../components/Text';
 import {TextInput} from '../../../components/TextInput';
-import {Icon} from '../../../components/Icon';
 import {Button} from '../../../components/Button';
+import {PasswordInput} from '../../../components/PasswordInput';
 
 export function SignUpScreen() {
   function submitForm() {
@@ -27,10 +27,10 @@ export function SignUpScreen() {
         placeholder="Digite seu email"
         boxProps={{mb: 's20'}}
       />
-      <TextInput
+
+      <PasswordInput
         label="Senha"
         placeholder="Digite sua senha"
-        RightComponent={<Icon color="gray2" name="eyeOn" />}
         boxProps={{mb: 's48'}}
       />
 
