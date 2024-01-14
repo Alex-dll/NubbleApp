@@ -4,8 +4,17 @@ import {TextInput} from '../../../components/TextInput';
 import {Button} from '../../../components/Button';
 import {Icon} from '../../../components/Icon';
 import {Screen} from '../../../components/Screen';
+import type {LoginScreenScreenProps} from '../../../routes/types';
 
-function LoginScreen() {
+function LoginScreen({navigation}: LoginScreenScreenProps) {
+  function navigateToSignUpScreen() {
+    navigation.navigate('SignUpScreen');
+  }
+
+  function navigateToForgotPasswordScreen() {
+    navigation.navigate('ForgotPasswordScreen');
+  }
+
   return (
     <Screen>
       <Text marginBottom="s8" preset="headingLarge">
@@ -28,12 +37,21 @@ function LoginScreen() {
         boxProps={{mb: 's10'}}
       />
 
-      <Text preset="paragraphSmall" color="primary" bold>
+      <Text
+        onPress={navigateToForgotPasswordScreen}
+        color="primary"
+        preset="paragraphSmall"
+        bold>
         Esqueci minha senha
       </Text>
 
       <Button title="Entrar" mt="s48" />
-      <Button title="Criar uma conta" mt="s12" preset="outline" />
+      <Button
+        title="Criar uma conta"
+        mt="s12"
+        preset="outline"
+        onPress={navigateToSignUpScreen}
+      />
     </Screen>
   );
 }

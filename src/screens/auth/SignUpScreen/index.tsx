@@ -4,10 +4,24 @@ import {Text} from '../../../components/Text';
 import {TextInput} from '../../../components/TextInput';
 import {Button} from '../../../components/Button';
 import {PasswordInput} from '../../../components/PasswordInput';
+import type {SignUpScreenScreenProps} from '../../../routes/types';
+import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 
-export function SignUpScreen() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function SignUpScreen({navigation}: SignUpScreenScreenProps) {
+  const {reset} = useResetNavigationSuccess();
+
   function submitForm() {
     //TODO: Implementar
+    reset({
+      title: `Enviamos as instruções  ${'\n'}para seu e-mail`,
+      description:
+        'Clique no link enviado no seu e-mail para recuperar sua senha',
+      icon: {
+        name: 'messageRound',
+        color: 'primary',
+      },
+    });
   }
 
   return (
