@@ -1,12 +1,30 @@
 import React from 'react';
 import {Text} from '../../../components/Text';
-import {TextInput} from '../../../components/TextInput';
 import {Button} from '../../../components/Button';
-import {Icon} from '../../../components/Icon';
 import {Screen} from '../../../components/Screen';
 import type {LoginScreenScreenProps} from '../../../routes/types';
 
+import {useForm} from 'react-hook-form';
+import {type LoginSchemaType, loginSchema} from './loginSchema';
+import {zodResolver} from '@hookform/resolvers/zod';
+import {FormTextInput} from '../../../components/Form/FormTextInput';
+import {FormPasswordTextInput} from '../../../components/Form/FormPasswordTextInput';
+
 function LoginScreen({navigation}: LoginScreenScreenProps) {
+  const {control, formState, handleSubmit} = useForm<LoginSchemaType>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    mode: 'onChange',
+    delayError: 500,
+  });
+
+  function submitForm({email, password}: LoginSchemaType) {
+    console.log('submitForm', {email, password});
+  }
+
   function navigateToSignUpScreen() {
     navigation.navigate('SignUpScreen');
   }
@@ -24,16 +42,20 @@ function LoginScreen({navigation}: LoginScreenScreenProps) {
         Digite seu e-mail e senha para entrar
       </Text>
 
-      <TextInput
+      <FormTextInput
+        control={control}
+        name="email"
         label="E-mail"
         placeholder="Digite seu e-mail"
+        autoComplete="email"
         boxProps={{mb: 's20'}}
       />
 
-      <TextInput
+      <FormPasswordTextInput
+        control={control}
+        name="password"
         label="Senha"
         placeholder="Digite sua senha"
-        RightComponent={<Icon color="gray2" name="eyeOn" />}
         boxProps={{mb: 's10'}}
       />
 
@@ -45,7 +67,12 @@ function LoginScreen({navigation}: LoginScreenScreenProps) {
         Esqueci minha senha
       </Text>
 
-      <Button title="Entrar" mt="s48" />
+      <Button
+        disabled={!formState.isValid}
+        onPress={handleSubmit(submitForm)}
+        title="Entrar"
+        mt="s48"
+      />
       <Button
         title="Criar uma conta"
         mt="s12"
