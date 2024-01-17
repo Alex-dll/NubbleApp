@@ -27,16 +27,15 @@ export function SignUpScreen() {
     delayError: 500,
   });
 
-  function submitForm(formValues: SignUpSchemaType) {
-    console.log(formValues);
-    // reset({
-    //   title: 'Sua conta foi criada com sucesso!',
-    //   description: 'Agora é só fazer login na nossa plataforma',
-    //   icon: {
-    //     name: 'checkRound',
-    //     color: 'success',
-    //   },
-    // });
+  function submitForm(_formValues: SignUpSchemaType) {
+    reset({
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é só fazer login na nossa plataforma',
+      icon: {
+        name: 'checkRound',
+        color: 'success',
+      },
+    });
   }
 
   return (
