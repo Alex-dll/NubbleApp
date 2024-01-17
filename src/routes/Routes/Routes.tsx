@@ -1,15 +1,17 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {LoginScreen} from '../screens/auth/LoginScreen';
-import {SignUpScreen} from '../screens/auth/SignUpScreen';
-import {SuccessScreen} from '../screens/auth/SuccessScreen';
+import {
+  LoginScreen,
+  SignUpScreen,
+  SuccessScreen,
+  ForgotPasswordScreen,
+} from '@screens';
 import type {RootStackParamList} from './types';
-import {ForgotPasswordScreen} from '../screens/auth/ForgotPasswordScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export function Routers() {
+export function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator

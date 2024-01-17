@@ -1,21 +1,28 @@
 import React, {useRef} from 'react';
-import {Pressable, TextInput as RNTextInput, TextStyle} from 'react-native';
-import {Box} from '../Box';
-import {Text} from '../Text';
-import {$fontFamily, $fontSizes} from '../Text/consts';
+import {
+  Pressable,
+  TextInput as RNTextInput,
+  TextInputProps as RNTextInputProps,
+  TextStyle,
+} from 'react-native';
+import {useAppTheme} from '@hooks';
 
-import {type TextInputProps} from './types';
+import {$fontFamily, $fontSizes, Text} from '../Text';
+import {Box, BoxProps} from '../Box';
 
-import {useAppTheme} from '../../hooks/useAppTheme';
-import {type BoxProps} from '../Box/types';
+export interface TextInputProps extends RNTextInputProps {
+  label: string;
+  errorMessage?: string;
+  RightComponent?: React.ReactElement;
+  boxProps?: BoxProps;
+}
 
 export function TextInput({
   label,
   errorMessage,
   RightComponent,
   boxProps,
-
-  ...RNTextInputProps
+  ...rnTextInputProps
 }: TextInputProps) {
   const {colors} = useAppTheme();
   const inputRef = useRef<RNTextInput>(null);
@@ -31,20 +38,19 @@ export function TextInput({
   function focusInput() {
     inputRef.current?.focus();
   }
-
   return (
     <Box {...boxProps}>
       <Pressable onPress={focusInput}>
-        <Text preset="paragraphMedium" mb="s4">
+        <Text preset="paragraphMedium" marginBottom="s4">
           {label}
         </Text>
         <Box {...$textInputContainer}>
           <RNTextInput
-            ref={inputRef}
             autoCapitalize="none"
+            ref={inputRef}
             placeholderTextColor={colors.gray2}
             style={$textInputStyle}
-            {...RNTextInputProps}
+            {...rnTextInputProps}
           />
           {RightComponent && (
             <Box justifyContent="center" ml="s16">
@@ -53,7 +59,7 @@ export function TextInput({
           )}
         </Box>
         {errorMessage && (
-          <Text bold preset="paragraphSmall" color="error">
+          <Text color="error" preset="paragraphSmall" bold>
             {errorMessage}
           </Text>
         )}

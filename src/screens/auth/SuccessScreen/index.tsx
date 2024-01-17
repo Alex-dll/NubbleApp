@@ -3,7 +3,7 @@ import {Screen} from '../../../components/Screen';
 import {Icon} from '../../../components/Icon';
 import {Text} from '../../../components/Text';
 import {Button} from '../../../components/Button';
-import type {SuccessScreenScreenProps} from '../../../routes/types';
+import type {SuccessScreenScreenProps} from '../../../routes/Routes/types';
 
 export function SuccessScreen({navigation, route}: SuccessScreenScreenProps) {
   return (

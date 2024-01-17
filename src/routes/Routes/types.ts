@@ -1,5 +1,5 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import type {IconProps} from '../components/Icon/types';
+import type {IconProps} from '@components';
 
 export type RootStackParamList = {
   LoginScreen: undefined;
