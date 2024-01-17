@@ -1,12 +1,17 @@
 import React from 'react';
-import {Screen} from '../../../components/Screen';
-import {Text} from '../../../components/Text';
-import {Button} from '../../../components/Button';
+
 import {zodResolver} from '@hookform/resolvers/zod';
-import {useResetNavigationSuccess} from '../../../hooks/useResetNavigationSuccess';
 import {useForm} from 'react-hook-form';
-import {FormTextInput} from '../../../components/Form/FormTextInput';
-import {FormPasswordTextInput} from '../../../components/Form/FormPasswordTextInput';
+
+import {
+  Button,
+  FormPasswordTextInput,
+  FormTextInput,
+  Screen,
+  Text,
+} from '@components';
+import {useResetNavigationSuccess} from '@hooks';
+
 import {type SignUpSchemaType, signUpSchema} from './signUpSchema';
 
 export function SignUpScreen() {

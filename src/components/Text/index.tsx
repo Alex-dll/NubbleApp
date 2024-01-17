@@ -1,7 +1,9 @@
-import {createText} from '@shopify/restyle';
-import {Theme} from '@theme';
 import React, {type ComponentProps} from 'react';
 import type {TextProps as RNTextProps, TextStyle} from 'react-native';
+
+import {createText} from '@shopify/restyle';
+
+import {Theme} from '@theme';
 
 type SRTextProps = ComponentProps<typeof SRText>;
 

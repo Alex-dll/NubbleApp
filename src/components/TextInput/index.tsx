@@ -5,10 +5,11 @@ import {
   TextInputProps as RNTextInputProps,
   TextStyle,
 } from 'react-native';
+
 import {useAppTheme} from '@hooks';
 
-import {$fontFamily, $fontSizes, Text} from '../Text';
 import {Box, BoxProps} from '../Box';
+import {$fontFamily, $fontSizes, Text} from '../Text';
 
 export interface TextInputProps extends RNTextInputProps {
   label: string;

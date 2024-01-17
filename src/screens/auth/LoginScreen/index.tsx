@@ -1,9 +1,8 @@
 import React from 'react';
-import type {LoginScreenScreenProps} from '../../../routes/Routes/types';
 
-import {useForm} from 'react-hook-form';
-import {type LoginSchemaType, loginSchema} from './loginSchema';
 import {zodResolver} from '@hookform/resolvers/zod';
+import {useForm} from 'react-hook-form';
+
 import {
   Text,
   Screen,
@@ -11,6 +10,9 @@ import {
   FormTextInput,
   FormPasswordTextInput,
 } from '@components';
+import {LoginScreenScreenProps} from '@routes';
+
+import {type LoginSchemaType, loginSchema} from './loginSchema';
 
 function LoginScreen({navigation}: LoginScreenScreenProps) {
   const {control, formState, handleSubmit} = useForm<LoginSchemaType>({
