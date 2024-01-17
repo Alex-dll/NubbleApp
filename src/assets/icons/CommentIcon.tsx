@@ -1,5 +1,7 @@
 import React from 'react';
+
 import {Svg, Path} from 'react-native-svg';
+
 import type {IconBase} from '../../components/Icon/types';
 
 export function CommentIcon({size = 20, color = 'black'}: IconBase) {

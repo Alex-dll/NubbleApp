@@ -1,5 +1,7 @@
 import React from 'react';
+
 import {Svg, Path, Circle} from 'react-native-svg';
+
 import type {IconBase} from '../../components/Icon/types';
 import {palette} from '../../theme';
 
